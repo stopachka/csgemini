@@ -1,24 +1,21 @@
-// Docs: https://www.instantdb.com/docs/permissions
-
-import type { InstantRules } from "@instantdb/react";
+import type { AppSchema } from "./instant.schema";
 
 const rules = {
-  /**
-   * Welcome to Instant's permission system!
-   * Right now your rules are empty. To start filling them in, check out the docs:
-   * https://www.instantdb.com/docs/permissions
-   *
-   * Here's an example to give you a feel:
-   * posts: {
-   *   allow: {
-   *     view: "true",
-   *     create: "isOwner",
-   *     update: "isOwner",
-   *     delete: "isOwner",
-   *   },
-   *   bind: ["isOwner", "auth.id != null && auth.id == data.ownerId"],
-   * },
-   */
-} satisfies InstantRules;
+  maps: {
+    allow: {
+      view: "true",
+      create: "false",
+      update: "false",
+      delete: "false",
+    },
+  },
+  $files: {
+    allow: {
+      view: "true",
+      create: "false",
+      delete: "false",
+    },
+  },
+};
 
 export default rules;
